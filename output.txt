@@ -1,0 +1,672 @@
+
+******************** PART 1: BASICS ********************
+
+WRITING to a test file with block_size = 256 and block_count = 512000
+Elapsed time: 3.448785 seconds
+
+READING the test file with block_size = 256 and block_count = 512000
+Elapsed time: 0.540418 seconds
+
+WRITING to a test file with block_size = 1024 and block_count = 1024000
+Elapsed time: 23.198254 seconds
+
+READING the test file with block_size = 1024 and block_count = 1024000
+Elapsed time: 1.082024 seconds
+
+TESTING negative case when bytes to be read are more than the file size
+File size too small for given block size and count
+
+
+******************** PART 2: MEASUREMENT ********************
+
+finding optimal block count and file size for block size = 64
+Optimal block count: 1048576
+Optimal file size: 64 MB
+
+finding optimal block count and file size for block size = 128
+Optimal block count: 16777216
+Optimal file size: 2048 MB
+
+finding optimal block count and file size for block size = 256
+Optimal block count: 16777216
+Optimal file size: 4096 MB
+
+finding optimal block count and file size for block size = 512
+Optimal block count: 8388608
+Optimal file size: 4096 MB
+
+finding optimal block count and file size for block size = 1024
+Optimal block count: 4194304
+Optimal file size: 4096 MB
+
+4194304 will be used in Part 3 as the block count
+
+
+******************** PART 3: RAW PERFORMANCE ********************
+
+block size: 2
+Elapsed time: 3.763901 seconds
+Speed in MiB/s: 2.125454
+
+block size: 4
+Elapsed time: 4.094178 seconds
+Speed in MiB/s: 3.907988
+
+block size: 8
+Elapsed time: 4.057622 seconds
+Speed in MiB/s: 7.886393
+
+block size: 16
+Elapsed time: 3.808712 seconds
+Speed in MiB/s: 16.803581
+
+block size: 32
+Elapsed time: 4.070975 seconds
+Speed in MiB/s: 31.442099
+
+block size: 64
+Elapsed time: 4.235586 seconds
+Speed in MiB/s: 60.440279
+
+block size: 128
+Elapsed time: 4.928506 seconds
+Speed in MiB/s: 103.885437
+
+block size: 256
+Elapsed time: 5.969302 seconds
+Speed in MiB/s: 171.544345
+
+block size: 512
+Elapsed time: 7.375324 seconds
+Speed in MiB/s: 277.682716
+
+block size: 1024
+Elapsed time: 10.160568 seconds
+Speed in MiB/s: 403.127069
+
+
+
+******************** PART 4: CACHING ********************
+
+creating/writing to file 'test' with block_size = 1024 and block_count = 204800
+Elapsed time: 4.210956 seconds
+
+CLEARING CACHE
+
+block size: 2
+reading file with empty cache
+Elapsed time: 95.306470 seconds
+Speed in MiB/s: 2.098493
+
+reading file again without clearing cache
+Elapsed time: 94.169093 seconds
+Speed in MiB/s: 2.123839
+
+CLEARING CACHE
+
+block size: 4
+reading file with empty cache
+Elapsed time: 47.720460 seconds
+Speed in MiB/s: 4.191074
+
+reading file again without clearing cache
+Elapsed time: 47.140509 seconds
+Speed in MiB/s: 4.242636
+
+CLEARING CACHE
+
+block size: 8
+reading file with empty cache
+Elapsed time: 23.728308 seconds
+Speed in MiB/s: 8.428751
+
+reading file again without clearing cache
+Elapsed time: 23.548898 seconds
+Speed in MiB/s: 8.492966
+
+CLEARING CACHE
+
+block size: 16
+reading file with empty cache
+Elapsed time: 12.186711 seconds
+Speed in MiB/s: 16.411319
+
+reading file again without clearing cache
+Elapsed time: 11.808175 seconds
+Speed in MiB/s: 16.937418
+
+CLEARING CACHE
+
+block size: 32
+reading file with empty cache
+Elapsed time: 6.606804 seconds
+Speed in MiB/s: 30.271823
+
+reading file again without clearing cache
+Elapsed time: 5.882356 seconds
+Speed in MiB/s: 33.999982
+
+CLEARING CACHE
+
+block size: 64
+reading file with empty cache
+Elapsed time: 3.706400 seconds
+Speed in MiB/s: 53.960717
+
+reading file again without clearing cache
+Elapsed time: 2.945969 seconds
+Speed in MiB/s: 67.889377
+
+CLEARING CACHE
+
+block size: 128
+reading file with empty cache
+Elapsed time: 2.232595 seconds
+Speed in MiB/s: 89.581854
+
+reading file again without clearing cache
+Elapsed time: 1.556890 seconds
+Speed in MiB/s: 128.461227
+
+CLEARING CACHE
+
+block size: 256
+reading file with empty cache
+Elapsed time: 1.479932 seconds
+Speed in MiB/s: 135.141344
+
+reading file again without clearing cache
+Elapsed time: 0.744169 seconds
+Speed in MiB/s: 268.756156
+
+CLEARING CACHE
+
+block size: 512
+reading file with empty cache
+Elapsed time: 1.283833 seconds
+Speed in MiB/s: 155.783501
+
+reading file again without clearing cache
+Elapsed time: 0.382601 seconds
+Speed in MiB/s: 522.737787
+
+CLEARING CACHE
+
+block size: 1024
+reading file with empty cache
+Elapsed time: 0.867416 seconds
+Speed in MiB/s: 230.569877
+
+reading file again without clearing cache
+Elapsed time: 0.198340 seconds
+Speed in MiB/s: 1008.369467
+
+
+
+******************** PART 5: SYSTEM CALLS ********************
+
+creating syscalls.txt with block_size = 1024 and block_count = 2
+Elapsed time: 0.000057 seconds
+file size: 2048 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 0.001739 seconds
+Speed in MiB/s: 1.123131
+Speed in B/s: 1177688.326624
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 0.001457 seconds
+Speed in MiB/s: 1.340511
+Speed in B/s: 1405628.002745
+
+*****
+
+creating syscalls.txt with block_size = 1024 and block_count = 4
+Elapsed time: 0.000085 seconds
+file size: 4096 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 0.003618 seconds
+Speed in MiB/s: 1.079671
+Speed in B/s: 1132117.191819
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 0.002922 seconds
+Speed in MiB/s: 1.336841
+Speed in B/s: 1401779.603012
+
+*****
+
+creating syscalls.txt with block_size = 1024 and block_count = 8
+Elapsed time: 0.000161 seconds
+file size: 8192 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 0.007367 seconds
+Speed in MiB/s: 1.060472
+Speed in B/s: 1111985.882992
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 0.005965 seconds
+Speed in MiB/s: 1.309723
+Speed in B/s: 1373344.509640
+
+*****
+
+creating syscalls.txt with block_size = 1024 and block_count = 16
+Elapsed time: 0.000313 seconds
+file size: 16384 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 0.014536 seconds
+Speed in MiB/s: 1.074917
+Speed in B/s: 1127132.636214
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 0.012456 seconds
+Speed in MiB/s: 1.254416
+Speed in B/s: 1315350.032113
+
+*****
+
+creating syscalls.txt with block_size = 1024 and block_count = 32
+Elapsed time: 0.000618 seconds
+file size: 32768 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 0.028777 seconds
+Speed in MiB/s: 1.085937
+Speed in B/s: 1138687.145985
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 0.024062 seconds
+Speed in MiB/s: 1.298728
+Speed in B/s: 1361815.310448
+
+*****
+
+creating syscalls.txt with block_size = 1024 and block_count = 64
+Elapsed time: 0.001229 seconds
+file size: 65536 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 0.058521 seconds
+Speed in MiB/s: 1.067993
+Speed in B/s: 1119871.499120
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 0.048712 seconds
+Speed in MiB/s: 1.283051
+Speed in B/s: 1345376.909180
+
+*****
+
+creating syscalls.txt with block_size = 1024 and block_count = 128
+Elapsed time: 0.002449 seconds
+file size: 131072 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 0.115278 seconds
+Speed in MiB/s: 1.084335
+Speed in B/s: 1137007.928659
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 0.096299 seconds
+Speed in MiB/s: 1.298040
+Speed in B/s: 1361094.092358
+
+*****
+
+creating syscalls.txt with block_size = 1024 and block_count = 256
+Elapsed time: 0.005021 seconds
+file size: 262144 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 0.231974 seconds
+Speed in MiB/s: 1.077707
+Speed in B/s: 1130057.678878
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 0.195642 seconds
+Speed in MiB/s: 1.277844
+Speed in B/s: 1339916.786784
+
+*****
+
+creating syscalls.txt with block_size = 1024 and block_count = 512
+Elapsed time: 0.010735 seconds
+file size: 524288 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 0.474552 seconds
+Speed in MiB/s: 1.053625
+Speed in B/s: 1104806.217232
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 0.384222 seconds
+Speed in MiB/s: 1.301331
+Speed in B/s: 1364544.456070
+
+*****
+
+creating syscalls.txt with block_size = 1024 and block_count = 1024
+Elapsed time: 0.020428 seconds
+file size: 1048576 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 0.930617 seconds
+Speed in MiB/s: 1.074556
+Speed in B/s: 1126753.540930
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 0.770626 seconds
+Speed in MiB/s: 1.297646
+Speed in B/s: 1360680.797170
+
+*****
+
+creating syscalls.txt with block_size = 1024 and block_count = 2048
+Elapsed time: 0.041060 seconds
+file size: 2097152 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 1.958128 seconds
+Speed in MiB/s: 1.021384
+Speed in B/s: 1070998.422984
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 1.550666 seconds
+Speed in MiB/s: 1.289768
+Speed in B/s: 1352420.185907
+
+*****
+
+creating syscalls.txt with block_size = 1024 and block_count = 4096
+Elapsed time: 0.080705 seconds
+file size: 4194304 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 3.708112 seconds
+Speed in MiB/s: 1.078716
+Speed in B/s: 1131115.780753
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 3.142357 seconds
+Speed in MiB/s: 1.272930
+Speed in B/s: 1334763.682166
+
+*****
+
+creating syscalls.txt with block_size = 1024 and block_count = 8192
+Elapsed time: 0.166411 seconds
+file size: 8388608 bytes
+
+reading syscalls.txt with block_size = 1
+Elapsed time: 7.492835 seconds
+Speed in MiB/s: 1.067687
+Speed in B/s: 1119550.610683
+
+lseek on syscalls.txt with block_size = 1
+Elapsed time: 6.271041 seconds
+Speed in MiB/s: 1.275705
+Speed in B/s: 1337673.920486
+
+*****
+
+
+
+******************** PART 6: RAW PERFORMANCE ********************
+
+*** BLOCK SIZE: 2 ***
+creating test file with block_size = 2 and block_count = 2048000
+Elapsed time: 3.741874 seconds
+file size: 4096000 bytes
+
+CLEARING CACHE
+
+BEFORE CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.819741 seconds
+Speed in MiB/s: 2.146597
+
+AFTER CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.931516 seconds
+Speed in MiB/s: 2.022375
+
+CLEARING CACHE
+
+BEFORE CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 1a0d1005
+elapsed time: 0.023211 seconds
+speed in MiB/s: 168.293051
+
+AFTER CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 1a0d1005
+elapsed time: 0.005549 seconds
+speed in MiB/s: 703.955668
+
+
+*** BLOCK SIZE: 4 ***
+creating test file with block_size = 4 and block_count = 2048000
+Elapsed time: 3.851433 seconds
+file size: 8192000 bytes
+
+CLEARING CACHE
+
+BEFORE CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.812103 seconds
+Speed in MiB/s: 4.311289
+
+AFTER CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.811839 seconds
+Speed in MiB/s: 4.311917
+
+CLEARING CACHE
+
+BEFORE CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 1f1e160c
+elapsed time: 0.048663 seconds
+speed in MiB/s: 160.542918
+
+AFTER CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 1f1e160c
+elapsed time: 0.009866 seconds
+speed in MiB/s: 791.860937
+
+
+*** BLOCK SIZE: 8 ***
+creating test file with block_size = 8 and block_count = 2048000
+Elapsed time: 4.128970 seconds
+file size: 16384000 bytes
+
+CLEARING CACHE
+
+BEFORE CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.964276 seconds
+Speed in MiB/s: 7.954585
+
+AFTER CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.803692 seconds
+Speed in MiB/s: 8.662787
+
+CLEARING CACHE
+
+BEFORE CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 1a050f0b
+elapsed time: 0.075626 seconds
+speed in MiB/s: 206.608838
+
+AFTER CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 1a050f0b
+elapsed time: 0.016761 seconds
+speed in MiB/s: 932.223614
+
+
+*** BLOCK SIZE: 16 ***
+creating test file with block_size = 16 and block_count = 2048000
+Elapsed time: 4.412326 seconds
+file size: 32768000 bytes
+
+CLEARING CACHE
+
+BEFORE CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.832840 seconds
+Speed in MiB/s: 17.050043
+
+AFTER CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.809706 seconds
+Speed in MiB/s: 17.267998
+
+CLEARING CACHE
+
+BEFORE CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 0a190017
+elapsed time: 0.116210 seconds
+speed in MiB/s: 268.909732
+
+AFTER CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 0a190017
+elapsed time: 0.029586 seconds
+speed in MiB/s: 1056.242818
+
+
+*** BLOCK SIZE: 32 ***
+creating test file with block_size = 32 and block_count = 2048000
+Elapsed time: 4.990626 seconds
+file size: 65536000 bytes
+
+CLEARING CACHE
+
+BEFORE CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.990327 seconds
+Speed in MiB/s: 31.401875
+
+AFTER CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.822277 seconds
+Speed in MiB/s: 34.297749
+
+CLEARING CACHE
+
+BEFORE CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 170d0a0f
+elapsed time: 0.225802 seconds
+speed in MiB/s: 276.791171
+
+AFTER CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 170d0a0f
+elapsed time: 0.055681 seconds
+speed in MiB/s: 1122.465473
+
+
+*** BLOCK SIZE: 64 ***
+creating test file with block_size = 64 and block_count = 2048000
+Elapsed time: 6.157083 seconds
+file size: 131072000 bytes
+
+CLEARING CACHE
+
+BEFORE CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 2.348487 seconds
+Speed in MiB/s: 53.225758
+
+AFTER CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.849504 seconds
+Speed in MiB/s: 67.585688
+
+CLEARING CACHE
+
+BEFORE CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 1e0b0608
+elapsed time: 0.549700 seconds
+speed in MiB/s: 227.396762
+
+AFTER CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 1e0b0608
+elapsed time: 0.112115 seconds
+speed in MiB/s: 1114.926638
+
+
+*** BLOCK SIZE: 128 ***
+creating test file with block_size = 128 and block_count = 2048000
+Elapsed time: 8.359747 seconds
+file size: 262144000 bytes
+
+CLEARING CACHE
+
+BEFORE CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 3.110809 seconds
+Speed in MiB/s: 80.364947
+
+AFTER CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.855662 seconds
+Speed in MiB/s: 134.722811
+
+CLEARING CACHE
+
+BEFORE CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 18090719
+elapsed time: 0.916802 seconds
+speed in MiB/s: 272.687014
+
+AFTER CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 18090719
+elapsed time: 0.219912 seconds
+speed in MiB/s: 1136.818364
+
+
+*** BLOCK SIZE: 256 ***
+creating test file with block_size = 256 and block_count = 2048000
+Elapsed time: 14.468053 seconds
+file size: 524288000 bytes
+
+CLEARING CACHE
+
+BEFORE CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 4.036774 seconds
+Speed in MiB/s: 123.861281
+
+AFTER CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.838363 seconds
+Speed in MiB/s: 271.981105
+
+CLEARING CACHE
+
+BEFORE CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 030a0418
+elapsed time: 1.845590 seconds
+speed in MiB/s: 270.916076
+
+AFTER CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 030a0418
+elapsed time: 0.442081 seconds
+speed in MiB/s: 1131.014452
+
+
+*** BLOCK SIZE: 512 ***
+creating test file with block_size = 512 and block_count = 2048000
+Elapsed time: 24.709564 seconds
+file size: 1048576000 bytes
+
+CLEARING CACHE
+
+BEFORE CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 6.306027 seconds
+Speed in MiB/s: 158.578452
+
+AFTER CACHING reading test file with simple read from Part: 1 with block_size 1024 and block_count 2048000
+Elapsed time: 1.985403 seconds
+Speed in MiB/s: 503.676080
+
+CLEARING CACHE
+
+BEFORE CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 1c010506
+elapsed time: 4.296364 seconds
+speed in MiB/s: 232.754953
+
+AFTER CACHING: reading test file with fast.c, i.e., optimal block size and multithreading
+xor result: 1c010506
+elapsed time: 0.895542 seconds
+speed in MiB/s: 1116.642212
+
+
+
